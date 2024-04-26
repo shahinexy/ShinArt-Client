@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { authContext } from "../AuthProvider/AuthProvider";
 
 const Login = () => {
+    const {sin} = useContext(authContext)
+    console.log(sin);
   return (
     <div>
       <div className="xl:w-1/3 md:w-2/3 text-forth p-8 bg-secondary mx-auto md:my-20 my-6">
