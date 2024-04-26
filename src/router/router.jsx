@@ -5,6 +5,8 @@ import AllItems from "../pages/AllItems";
 import AddItem from "../pages/AddItem";
 import MyItems from "../pages/MyItems";
 import ErrorPage from "../pages/ErrorPage";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
         path: "/myItemList",
         element: <MyItems></MyItems>,
       },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
+      }
     ],
   },
 ]);

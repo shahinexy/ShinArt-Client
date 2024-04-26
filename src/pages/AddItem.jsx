@@ -137,7 +137,7 @@ const AddItem = () => {
               <input
               {...register('email')}
                 className="w-full bg-third p-2"
-                type="text"
+                type="email"
                 placeholder="email"
               />
             </div>

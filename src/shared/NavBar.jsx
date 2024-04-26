@@ -86,8 +86,9 @@ const NavBar = () => {
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 space-x-3 text-base font-bold">{navLink}</ul>
           </div>
-          <div className="navbar-end">
-            <a className="btn text-lg font-semibold text-forth bg-secondary border-secondary hover:bg-third rounded-none">Login</a>
+          <div className="navbar-end space-x-3">
+            <Link to={'/login'} className="btn text-lg font-semibold text-forth bg-secondary border-secondary hover:bg-third rounded-none">Login</Link>
+            <Link to={'/register'} className="btn text-lg font-semibold text-forth bg-secondary border-secondary hover:bg-third rounded-none">Register</Link>
           </div>
         </div>
       </nav>
