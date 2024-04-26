@@ -46,11 +46,7 @@ const Slider = () => {
           </SwiperSlide>
         </Swiper>
         <div className="absolute w-full bottom-0 z-10 flex justify-center flex-col items-center bg-black/50 py-5 text-white">
-          <p className="text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            qui voluptatum id obcaecati cumque. Accusamus voluptate culpa
-            nostrum officia repellendus!
-          </p>
+          <h2 className="text-3xl text-center">Decorate your home with us</h2>
           <button className="md:text-4xl text-2xl text-primary hover:text-forth">
             <FaChevronDown></FaChevronDown>
           </button>
