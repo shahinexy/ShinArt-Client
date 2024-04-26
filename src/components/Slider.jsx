@@ -45,9 +45,9 @@ const Slider = () => {
             <img className="w-full md:h-[91vh] h-[35vh]" src={slid1} />
           </SwiperSlide>
         </Swiper>
-        <div className="absolute w-full bottom-0 z-10 flex justify-center flex-col items-center bg-black/50 py-5 text-white">
-          <h2 className="text-3xl text-center">Decorate your home with us</h2>
-          <button className="md:text-4xl text-2xl text-primary hover:text-forth">
+        <div className="absolute w-full bottom-0 z-10 flex justify-center flex-col items-center bg-forth/50 md:py-5 py-1 text-white">
+          <h2 className="md:text-3xl text-2xl text-center uppercase">Decorate your home with us</h2>
+          <button className="md:block hidden  md:text-4xl text-2xl text-forth hover:text-primary">
             <FaChevronDown></FaChevronDown>
           </button>
         </div>
