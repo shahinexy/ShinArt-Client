@@ -6,7 +6,7 @@ const ThemeToggle = () => {
           <input
             type="checkbox"
             className="theme-controller"
-            value="retro"
+            value="dark"
           />
           <svg
             className="swap-off fill-current w-10 h-10"
