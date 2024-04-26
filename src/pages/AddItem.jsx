@@ -5,10 +5,23 @@ const AddItem = () => {
     register,
     handleSubmit,
     // watch,
-    formState: { errors },
+    // formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) =>{
+     console.log(data)
+     fetch('http://localhost:5000/art&craft', {
+      method: "POST",
+      headers:{
+        "content-type" : "application/json"
+      },
+      body: JSON.stringify(data)
+     })
+     .then(res => res.json())
+     .then(data =>{
+      console.log(data);
+     })
+    };
 
   return (
     <div className="text-forth">
@@ -39,6 +52,7 @@ const AddItem = () => {
                 className="w-full bg-third p-2"
                 type="text"
                 placeholder="url"
+                required
               />
             </div>
             <div className="w-full">
@@ -48,6 +62,7 @@ const AddItem = () => {
                 className="w-full bg-third p-2"
                 type="text"
                 placeholder="name"
+                required
               />
             </div>
           </div>
@@ -59,6 +74,7 @@ const AddItem = () => {
                 className="w-full bg-third p-2"
                 type="text"
                 placeholder="subcategory"
+                required
               />
             </div>
             <div className="w-full">
@@ -68,6 +84,7 @@ const AddItem = () => {
                 className="w-full bg-third p-2"
                 type="number"
                 placeholder="price"
+                required
               />
             </div>
           </div>

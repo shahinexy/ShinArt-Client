@@ -11,24 +11,25 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root></Root>,
     errorElement: <ErrorPage></ErrorPage>,
-    children:[
-        {
-            path: '/',
-            element: <Home></Home>
-        },
-        {
-            path: '/allitems',
-            element: <AllItems></AllItems>
-        },
-        {
-            path: '/addItme',
-            element: <AddItem></AddItem>
-        },
-        {
-            path: '/myItemList',
-            element: <MyItems></MyItems>
-        }
-    ]
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+        loader: () => fetch("http://localhost:5000/art&craft"),
+      },
+      {
+        path: "/allitems",
+        element: <AllItems></AllItems>,
+      },
+      {
+        path: "/addItme",
+        element: <AddItem></AddItem>,
+      },
+      {
+        path: "/myItemList",
+        element: <MyItems></MyItems>,
+      },
+    ],
   },
 ]);
 
