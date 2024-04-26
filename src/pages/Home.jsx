@@ -1,8 +1,10 @@
+import Slider from "../components/Slider";
 
 const Home = () => {
     return (
         <div>
-            <p className="text-3xl font-bold text-secondary">Home page</p>
+            <Slider></Slider>
+            <p id="home" className="text-3xl font-bold text-secondary">Home page</p>
         </div>
     );
 };
