@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { authContext } from "../AuthProvider/AuthProvider";
+import { Tooltip } from "react-tooltip";
+import { TbUserCircle } from "react-icons/tb";
 
 const NavBar = () => {
-  const { user } = useContext(authContext);
+  const { user, logoutUser } = useContext(authContext);
   console.log(user);
 
   const navLink = (
@@ -109,27 +111,55 @@ const NavBar = () => {
             </ul>
           </div>
           <div className="navbar-end sm:space-x-3 space-x-2">
-            <Link
-              to={"/login"}
-              className="btn md:px-5 px-2 text-lg font-semibold text-forth bg-secondary border-secondary hover:bg-third rounded-none"
-            >
-              Login
-            </Link>
-            <Link
-              to={"/register"}
-              className="btn md:px-5 px-2 text-lg font-semibold text-forth bg-secondary border-secondary hover:bg-third rounded-none"
-            >
-              Register
-            </Link>
-
-            <div>
-              <div
-                className="tooltip  tooltip-bottom"
-                data-tip="hello"
-              >
-                <button className="btn">Top</button>
-              </div>
-            </div>
+            {user ? (
+              <>
+              {/* ==== tool tip ======== */}
+                <div className="rounded-full w-10 h-10">
+                  <a id="clickable">
+                    {user?.photoURL ? (
+                      <>
+                        <img src={user.photoURL} alt="" />
+                      </>
+                    ) : (
+                      <TbUserCircle className="text-4xl text-forth"></TbUserCircle>
+                    )}
+                  </a>
+                  <Tooltip
+                    anchorSelect="#clickable"
+                    clickable
+                    style={{ backgroundColor: "#D1BB9E", color: "#68400d" }}
+                    className="z-20"
+                  >
+                    <div className="bg-secondary/100 md:p-3">
+                      <p className="font-bold text-lg">User: Shahin</p>
+                      <div className="flex justify-center">
+                        <button
+                          onClick={logoutUser}
+                          className="btn md:px-5 px-2 text-lg font-semibold text-forth bg-third border-secondary hover:bg-primary rounded-none md:mt-3 mt-2"
+                        >
+                          Logout
+                        </button>
+                      </div>
+                    </div>
+                  </Tooltip>
+                </div>
+              </>
+            ) : (
+              <>
+                <Link
+                  to={"/login"}
+                  className="btn md:px-5 px-2 text-lg font-semibold text-forth bg-secondary border-secondary hover:bg-third rounded-none"
+                >
+                  Login
+                </Link>
+                <Link
+                  to={"/register"}
+                  className="btn md:px-5 px-2 text-lg font-semibold text-forth bg-secondary border-secondary hover:bg-third rounded-none"
+                >
+                  Register
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </nav>
