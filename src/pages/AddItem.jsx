@@ -33,8 +33,8 @@ const AddItem = () => {
     };
 
   return (
-    <div className="text-forth">
-      <div className="md:w-2/4 mx-auto text-center space-y-3 md:my-8 my-5 px-3">
+    <div className="max-w-5xl mx-auto text-forth">
+      <div className="md:w-3/4 border-l-4 border-primary space-y-3 md:my-12 my-5 px-3">
         <h1 className="md:text-4xl text-3xl font-semibold">
           Add Your Carft And Art
         </h1>
@@ -46,7 +46,7 @@ const AddItem = () => {
         </p>
       </div>
 
-      <div className="bg-secondary p-8 md:mb-8 mb-5 max-w-5xl mx-auto">
+      <div className="bg-secondary p-8 md:mb-8 mb-5 ">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           <div className="flex justify-center mb-10">
             <h1 className=" text-center text-2xl font-bold border-b-2 border-third pb-3 px-2 inline-block ">
