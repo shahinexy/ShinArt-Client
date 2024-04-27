@@ -118,7 +118,7 @@ const NavBar = () => {
                   <a id="clickable">
                     {user?.photoURL ? (
                       <>
-                        <img className="rounded-full" src={user.photoURL} alt="" />
+                        <img className="rounded-full w-10 h-10" src={user.photoURL} alt="" />
                       </>
                     ) : (
                       <TbUserCircle className="text-4xl text-forth"></TbUserCircle>

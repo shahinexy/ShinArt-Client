@@ -78,13 +78,17 @@ const AddItem = () => {
           <div className="flex md:flex-row flex-col md:gap-7 gap-5">
             <div className="w-full">
               <p className="font-semibold mb-1">Subcategory Name</p>
-              <input
-              {...register('subcategory_Name')}
+               <select
+                {...register("subcategory_Name")}
                 className="w-full bg-third p-2"
-                type="text"
-                placeholder="subcategory"
-                required
-              />
+              >
+                <option value="Wooden Furniture & Sculptures">Wooden Furniture & Sculptures</option>
+                <option value="Wooden Home Decor">Wooden Home Decor</option>
+                <option value="Wooden Utensils and Kitchenware">Wooden Utensils and Kitchenware</option>
+                <option value="Jute Home Decor">Jute Home Decor</option>
+                <option value="Jute Kitchenware & utensils">Jute Kitchenware & utensils</option>
+                <option value="Jute and wooden jewellery">Jute and wooden jewellery</option>
+              </select>
             </div>
             <div className="w-full">
               <p className="font-semibold mb-1">Price</p>
@@ -122,21 +126,19 @@ const AddItem = () => {
           <div className="flex md:flex-row flex-col md:gap-7 gap-5">
             <div className="w-full">
               <p className="font-semibold mb-1">Customization</p>
-              {/* <input className="w-full bg-third p-2" type="text" placeholder="customization" /> */}
               <select
                 {...register("customization")}
                 className="w-full bg-third p-2"
               >
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
               </select>
             </div>
             <div className="w-full">
               <p className="font-semibold mb-1">Stock Status</p>
-              {/* <input className="w-full bg-third p-2" type="text" placeholder="stock status" /> */}
               <select {...register('stockStatus')} className="w-full bg-third p-2">
-                <option value="in_stok">In stock</option>
-                <option value="made_to_order">Made to order</option>
+                <option value="In stock">In stock</option>
+                <option value="Made to order">Made to order</option>
               </select>
             </div>
           </div>
