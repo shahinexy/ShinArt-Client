@@ -13,6 +13,7 @@ import slid5 from "../assets/images/2149864772.jpg";
 
 import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 import { FaChevronDown } from "react-icons/fa";
+import { Typewriter } from "react-simple-typewriter";
 
 const Slider = () => {
   return (
@@ -46,7 +47,22 @@ const Slider = () => {
           </SwiperSlide>
         </Swiper>
         <div className="absolute w-full bottom-0 z-10 flex justify-center flex-col items-center bg-forth/50 md:py-5 py-1 text-white">
-          <h2 className="md:text-3xl text-2xl text-center uppercase">Decorate your home with us</h2>
+          <h2 className="md:text-3xl text-2xl text-center uppercase">
+            <Typewriter
+              cursor
+              cursorColor="#FFF2E1"
+              cursorBlinking
+              delaySpeed={1000}
+              deleteSpeed={25}
+              loop={0}
+              typeSpeed={75}
+              words={[
+                "Decorate your home with us.",
+                "Get your best deals.",
+                "Explor the world of art.",
+              ]}
+            />
+          </h2>
           <button className="md:block hidden  md:text-4xl text-2xl text-forth hover:text-primary">
             <FaChevronDown></FaChevronDown>
           </button>

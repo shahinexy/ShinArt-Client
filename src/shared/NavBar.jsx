@@ -6,7 +6,7 @@ import { TbUserCircle } from "react-icons/tb";
 
 const NavBar = () => {
   const { user, logoutUser } = useContext(authContext);
-  console.log(user);
+  // console.log(user);
 
   const navLink = (
     <>
@@ -114,11 +114,11 @@ const NavBar = () => {
             {user ? (
               <>
               {/* ==== tool tip ======== */}
-                <div className="rounded-full w-10 h-10">
+                <div className="w-10 h-10">
                   <a id="clickable">
                     {user?.photoURL ? (
                       <>
-                        <img src={user.photoURL} alt="" />
+                        <img className="rounded-full" src={user.photoURL} alt="" />
                       </>
                     ) : (
                       <TbUserCircle className="text-4xl text-forth"></TbUserCircle>

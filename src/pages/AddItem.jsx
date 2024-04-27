@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { authContext } from "../AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 
 const AddItem = () => {
-  
+  const {user} = useContext(authContext)
+
   const {
     register,
     handleSubmit,
@@ -10,17 +14,21 @@ const AddItem = () => {
   } = useForm();
 
   const onSubmit = (data) =>{
-     console.log(data)
+    const datas = {...data, loginEmail: user.email}
+    console.log(datas)
      fetch('http://localhost:5000/art&craft', {
       method: "POST",
       headers:{
         "content-type" : "application/json"
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(datas)
      })
      .then(res => res.json())
      .then(data =>{
       console.log(data);
+      if(data.acknowledged){
+        toast.success('Successfully Added')
+      }
      })
     };
 

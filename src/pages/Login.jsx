@@ -8,7 +8,7 @@ const Login = () => {
   const [showHide, setShowHide] = useState(true);
   const [passType, setPassType] = useState(true);
 
-  const { loginUser } = useContext(authContext);
+  const { loginUser, googleLogin, githubLogin } = useContext(authContext);
 
   const {
     register,
@@ -21,6 +21,24 @@ const Login = () => {
     console.log(data);
 
     loginUser(data.email, data.pass)
+    .then(res => console.log(res))
+    .catch(error =>{
+      console.log(error);
+    })
+  }
+
+  // handle google login
+  const handleGoogleLogin = () =>{
+    googleLogin()
+    .then(res => console.log(res))
+    .catch(error =>{
+      console.log(error);
+    })
+  }
+
+  // handle github login 
+  const handleGithubLogin = () =>{
+    githubLogin()
     .then(res => console.log(res))
     .catch(error =>{
       console.log(error);
@@ -77,10 +95,10 @@ const Login = () => {
           </p>
         </form>
         <div className="flex gap-3">
-          <button className="btn flex-1 text-xl text-forth font-semibold hover:bg-primary rounded-none border-2 border-primary hover:border-forth bg-inherit mt-6">
+          <button onClick={handleGoogleLogin} className="btn flex-1 text-xl text-forth font-semibold hover:bg-primary rounded-none border-2 border-primary hover:border-forth bg-inherit mt-6">
             <FaGoogle></FaGoogle> Login
           </button>
-          <button className="btn flex-1 text-xl text-forth font-semibold hover:bg-primary rounded-none border-2 border-primary hover:border-forth bg-inherit mt-6">
+          <button onClick={handleGithubLogin} className="btn flex-1 text-xl text-forth font-semibold hover:bg-primary rounded-none border-2 border-primary hover:border-forth bg-inherit mt-6">
             <FaGithub></FaGithub> Login
           </button>
         </div>
