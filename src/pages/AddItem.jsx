@@ -9,6 +9,7 @@ const AddItem = () => {
   const {
     register,
     handleSubmit,
+    reset
     // watch,
     // formState: { errors },
   } = useForm();
@@ -28,6 +29,7 @@ const AddItem = () => {
       console.log(data);
       if(data.acknowledged){
         toast.success('Successfully Added')
+        reset()
       }
      })
     };
@@ -169,10 +171,11 @@ const AddItem = () => {
               className="w-full bg-third p-2"
               rows="3"
               placeholder="description"
+              required
             ></textarea>
           </div>
           <div className="py-5">
-            <button className="btn w-full text-xl text-forth font-semibold hover:bg-primary rounded-none border-2 border-primary hover:border-primary bg-inherit">
+            <button  className="btn w-full text-xl text-forth font-semibold hover:bg-primary rounded-none border-2 border-primary hover:border-primary bg-inherit">
               Add Now
             </button>
           </div>

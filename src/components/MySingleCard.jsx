@@ -13,14 +13,14 @@ const MySingleCard = ({ item }) => {
             {rating} <FaRegStar></FaRegStar>
           </p>
         </div>
-        <p className="pb-3">{description}</p>
+        <p className="pb-2">{description}</p>
 
         <div className="border-y-2 border-secondary py-3 flex flex-wrap gap-1 justify-between">
           <p className="bg-third px-2 border border-secondary font-semibold">Customization: {customization}</p>
           <p className="bg-third px-2 border border-secondary font-semibold"> {stockStatus}</p>
         </div>
 
-        <div className="flex gap-3 justify-between pt-3">
+        <div className="flex gap-3 justify-between pt-2">
           <button className="btn flex-1 flex gap-1 text-base items-center border border-secondary rounded-none bg-secondary text-forth font-bold hover:bg-inherit hover:border-secondary">
             Update <FaRegEdit></FaRegEdit>{" "}
           </button>

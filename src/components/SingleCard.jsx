@@ -10,7 +10,7 @@ const SingleCard = ({ item }) => {
       <div className="w-full h-full border border-secondary p-3 text-forth space-y-3 shadow-lg shadow-secondary">
         <img className="w-full h-56" src={photo} alt="" />
         <h1 className="text-2xl font-semibold">{item_name}</h1>
-        <div className="flex justify-between">
+        <div className="flex flex-wrap gap-1 justify-between">
           <p className="font-bold">Price: {price}$</p>
           <p className="bg-secondary px-2">{subcategory_Name}</p>
         </div>
