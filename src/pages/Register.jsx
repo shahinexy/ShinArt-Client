@@ -3,9 +3,10 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { authContext } from "../AuthProvider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const Register = () => {
-  const { createUser } = useContext(authContext);
+  const { createUser, updateUser } = useContext(authContext);
   const [showHide, setShowHide] = useState(true);
   const [passType, setPassType] = useState(true);
 
@@ -19,8 +20,19 @@ const Register = () => {
   const onSubmit = (data) => {
     console.log(data);
 
+    if(!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(data.pass)){
+      toast.error("Password requires 1 lowercase, 1 uppercase, and min 6 characters.")
+    }
+
     createUser(data.email, data.pass)
-      .then((res) => console.log(res))
+      .then((res) => {
+        if(res){
+          toast.success("Register Successfull")
+          updateUser(data.name, data.photo)
+          .then()
+          .catch(error => console.log(error))
+        }
+      })
       .catch((error) => {
         console.log(error);
       });
@@ -63,6 +75,7 @@ const Register = () => {
               className="w-full bg-third p-2 border-l-4 border-forth"
               type="email"
               placeholder="email"
+              required
             />
           </div>
           <div className="relative">
@@ -72,6 +85,7 @@ const Register = () => {
               className="w-full bg-third p-2 border-l-4 border-forth"
               type={passType ? "password" : "text"}
               placeholder="password"
+              required
             />
             {/* pass show and hide  */}
             <span

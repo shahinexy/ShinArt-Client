@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { authContext } from "../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [showHide, setShowHide] = useState(true);
@@ -21,16 +22,25 @@ const Login = () => {
     console.log(data);
 
     loginUser(data.email, data.pass)
-    .then(res => console.log(res))
+    .then(res => {
+      if(res){
+        toast.success("Login Successfull")
+      }
+    })
     .catch(error =>{
       console.log(error);
+      toast.error(error.message.split("/")[1].replaceAll(")", ""))
     })
   }
 
   // handle google login
   const handleGoogleLogin = () =>{
     googleLogin()
-    .then(res => console.log(res))
+    .then(res =>{
+      if(res){
+        toast.success("Login Successfull")
+      }
+    })
     .catch(error =>{
       console.log(error);
     })
@@ -39,7 +49,11 @@ const Login = () => {
   // handle github login 
   const handleGithubLogin = () =>{
     githubLogin()
-    .then(res => console.log(res))
+    .then(res => {
+      if(res){
+        toast.success("Login Successfull")
+      }
+    })
     .catch(error =>{
       console.log(error);
     })

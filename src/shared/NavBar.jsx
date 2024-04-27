@@ -131,7 +131,7 @@ const NavBar = () => {
                     className="z-20"
                   >
                     <div className="bg-secondary/100 md:p-3">
-                      <p className="font-bold text-lg">User: Shahin</p>
+                      <p className="font-bold text-lg">User: {user?.displayName || 'unknown'}</p>
                       <div className="flex justify-center">
                         <button
                           onClick={logoutUser}

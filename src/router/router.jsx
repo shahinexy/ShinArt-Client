@@ -7,6 +7,7 @@ import MyItems from "../pages/MyItems";
 import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -25,20 +26,28 @@ const router = createBrowserRouter([
       },
       {
         path: "/addItme",
-        element: <AddItem></AddItem>,
+        element: (
+          <PrivateRoute>
+            <AddItem></AddItem>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myItemList",
-        element: <MyItems></MyItems>,
+        element: (
+          <PrivateRoute>
+            <MyItems></MyItems>
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/login',
-        element: <Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path: '/register',
-        element: <Register></Register>
-      }
+        path: "/register",
+        element: <Register></Register>,
+      },
     ],
   },
 ]);
