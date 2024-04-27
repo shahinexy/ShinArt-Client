@@ -1,7 +1,7 @@
 const ThemeToggle = () => {
   return (
     <div>
-      <span className="fixed z-20 right-0 top-52 bg-secondary p-2 text-forth flex items-center justify-center">
+      <span className="fixed md:w-14 w-10 md:h-14 h-10 z-20 right-0 top-52 md:bg-secondary bg-third p-2 text-forth flex items-center justify-center">
         <label className="swap swap-rotate">
           <input
             type="checkbox"

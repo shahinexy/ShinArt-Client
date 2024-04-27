@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { authContext } from "../AuthProvider/AuthProvider";
 
 const NavBar = () => {
+  const { user } = useContext(authContext);
+  console.log(user);
+
   const navLink = (
     <>
       <li>
@@ -18,31 +23,46 @@ const NavBar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to={"/allItems"} className={({ isActive, isPending }) =>
+        <NavLink
+          to={"/allItems"}
+          className={({ isActive, isPending }) =>
             isPending
               ? "pending"
               : isActive
               ? "border-b-2 border-secondary rounded-none text-third"
               : "text-white"
-          }>All Art & craft Items</NavLink>
+          }
+        >
+          All Art & craft Items
+        </NavLink>
       </li>
       <li>
-        <NavLink to={"/addItme"} className={({ isActive, isPending }) =>
+        <NavLink
+          to={"/addItme"}
+          className={({ isActive, isPending }) =>
             isPending
               ? "pending"
               : isActive
               ? "border-b-2 border-secondary rounded-none text-third"
               : "text-white"
-          }>Add Craft Item</NavLink>
+          }
+        >
+          Add Craft Item
+        </NavLink>
       </li>
       <li>
-        <NavLink to={"/myItemList"} className={({ isActive, isPending }) =>
+        <NavLink
+          to={"/myItemList"}
+          className={({ isActive, isPending }) =>
             isPending
               ? "pending"
               : isActive
               ? "border-b-2 border-secondary rounded-none text-third"
               : "text-white"
-          }>My Art & Craft List</NavLink>
+          }
+        >
+          My Art & Craft List
+        </NavLink>
       </li>
     </>
   );
@@ -79,16 +99,37 @@ const NavBar = () => {
                 {navLink}
               </ul>
             </div>
-            <Link to={'/'} className="text-xl font-bold text-white">
+            <Link to={"/"} className="text-xl font-bold text-white">
               Shin<span className="text-third">Art</span>
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1 space-x-3 text-base font-bold">{navLink}</ul>
+            <ul className="menu menu-horizontal px-1 space-x-3 text-base font-bold">
+              {navLink}
+            </ul>
           </div>
-          <div className="navbar-end space-x-3">
-            <Link to={'/login'} className="btn text-lg font-semibold text-forth bg-secondary border-secondary hover:bg-third rounded-none">Login</Link>
-            <Link to={'/register'} className="btn text-lg font-semibold text-forth bg-secondary border-secondary hover:bg-third rounded-none">Register</Link>
+          <div className="navbar-end sm:space-x-3 space-x-2">
+            <Link
+              to={"/login"}
+              className="btn md:px-5 px-2 text-lg font-semibold text-forth bg-secondary border-secondary hover:bg-third rounded-none"
+            >
+              Login
+            </Link>
+            <Link
+              to={"/register"}
+              className="btn md:px-5 px-2 text-lg font-semibold text-forth bg-secondary border-secondary hover:bg-third rounded-none"
+            >
+              Register
+            </Link>
+
+            <div>
+              <div
+                className="tooltip  tooltip-bottom"
+                data-tip="hello"
+              >
+                <button className="btn">Top</button>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
