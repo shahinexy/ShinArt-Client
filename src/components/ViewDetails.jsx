@@ -1,5 +1,4 @@
 import { useLoaderData } from "react-router-dom";
-import img from "../assets/images/2149072895.jpg";
 import { FaAngleRight, FaStar } from "react-icons/fa";
 const ViewDetails = () => {
   const data = useLoaderData();

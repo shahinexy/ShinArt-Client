@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const SingleCard = ({ item }) => {
-  console.log(item);
   const {
     _id,
     photo,
@@ -21,12 +20,12 @@ const SingleCard = ({ item }) => {
         <h1 className="text-2xl font-semibold">{item_name}</h1>
         <div className="flex flex-wrap gap-1 justify-between">
           <p className="font-bold">Price: {price}$</p>
-          <p className="bg-secondary px-2">{subcategory_Name}</p>
+          <p className="bg-third px-2">{subcategory_Name}</p>
         </div>
         <p>{description}</p>
         <div className="flex justify-between">
           <Link to={`/viewDetails/${_id}`}>
-            <button className="btn flex gap-1 text-base items-center border border-secondary rounded-none bg-secondary text-forth font-bold hover:bg-inherit hover:border-secondary">
+            <button className="btn flex gap-1 text-base items-center border border-secondary rounded-none hover:bg-secondary text-forth font-bold bg-inherit hover:border-secondary">
               Details <FaAngleRight></FaAngleRight>{" "}
             </button>
           </Link>

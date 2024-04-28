@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../AuthProvider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
@@ -9,6 +9,8 @@ const Register = () => {
   const { createUser, updateUser } = useContext(authContext);
   const [showHide, setShowHide] = useState(true);
   const [passType, setPassType] = useState(true);
+
+  const navegate = useNavigate();
 
   const {
     register,
@@ -20,17 +22,24 @@ const Register = () => {
   const onSubmit = (data) => {
     console.log(data);
 
-    if(!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(data.pass)){
-      toast.error("Password requires 1 lowercase, 1 uppercase, and min 6 characters.")
+    if (!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(data.pass)) {
+      return toast.error(
+        "Password requires 1 lowercase, 1 uppercase, and min 6 characters."
+      );
     }
 
     createUser(data.email, data.pass)
       .then((res) => {
-        if(res){
-          toast.success("Register Successfull")
+        toast.success("Register Successfull");
+        if (res) {
+          navegate("/");
           updateUser(data.name, data.photo)
-          .then()
-          .catch(error => console.log(error))
+            .then(
+              setTimeout(() => {
+                window.location.reload();
+              }, 1000)
+            )
+            .catch((error) => console.log(error));
         }
       })
       .catch((error) => {

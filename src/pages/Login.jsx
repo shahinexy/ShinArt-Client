@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -8,8 +8,11 @@ import toast from "react-hot-toast";
 const Login = () => {
   const [showHide, setShowHide] = useState(true);
   const [passType, setPassType] = useState(true);
-
   const { loginUser, googleLogin, githubLogin } = useContext(authContext);
+
+  const location = useLocation()
+  const navigate = useNavigate()
+  console.log(location);
 
   const {
     register,
@@ -25,6 +28,7 @@ const Login = () => {
     .then(res => {
       if(res){
         toast.success("Login Successfull")
+        navigate(location?.state ? location.state : "/")
       }
     })
     .catch(error =>{
