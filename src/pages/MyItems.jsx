@@ -4,7 +4,6 @@ import MySingleCard from "../components/MySingleCard";
 
 const MyItems = () => {
   const { user } = useContext(authContext);
-  console.log(user);
   const [myItems, setMyItems] = useState([]);
   // console.log(myItems);
   useEffect(() => {
@@ -32,7 +31,7 @@ const MyItems = () => {
 
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-7 md:my-12 my-5">
         {
-            myItems.map(item => <MySingleCard key={item._id} item={item}></MySingleCard>)
+            myItems.map(item => <MySingleCard key={item._id} item={item} myItems={myItems} setMyItems={setMyItems}></MySingleCard>)
         }
       </div>
     </div>
