@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 const AddItem = () => {
   const {user} = useContext(authContext)
-
+  console.log(user.uid);
   const {
     register,
     handleSubmit,
@@ -15,7 +15,7 @@ const AddItem = () => {
   } = useForm();
 
   const onSubmit = (data) =>{
-    const datas = {...data, loginEmail: user.email}
+    const datas = {...data, loginUid: user.uid}
     console.log(datas)
      fetch('http://localhost:5000/art&craft', {
       method: "POST",

@@ -2,8 +2,7 @@ import { PropTypes } from "prop-types";
 import { FaAngleRight } from "react-icons/fa";
 
 const AllCards = ({ item }) => {
-  const { photo, item_name, price,  description } =
-    item;
+  const { photo, item_name, price, description } = item;
   return (
     <div>
       <div className="w-full h-full border border-secondary md:p-7 p-3 text-forth space-y-3 ">

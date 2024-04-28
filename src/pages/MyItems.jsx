@@ -4,13 +4,14 @@ import MySingleCard from "../components/MySingleCard";
 
 const MyItems = () => {
   const { user } = useContext(authContext);
+  console.log(user);
   const [myItems, setMyItems] = useState([]);
-  console.log(myItems);
+  // console.log(myItems);
   useEffect(() => {
-    fetch(`http://localhost:5000/art&craft/${user.email}`)
+    fetch(`http://localhost:5000/art&craft/uid/${user?.uid}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setMyItems(data);
       });
   }, [user]);

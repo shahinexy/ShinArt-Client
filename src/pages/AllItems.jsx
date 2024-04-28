@@ -37,7 +37,7 @@ const AllItems = () => {
               <td>{item.stockStatus}</td>
               <td>{item.price}$</td>
               <td>
-                <Link>
+                <Link to={`/viewDetails/${item._id}`}>
                   {" "}
                   <button className="btn flex gap-1 items-center border border-secondary rounded-none hover:bg-secondary text-forth font-bold bg-inherit hover:border-secondary">
                     Details <FaAngleRight></FaAngleRight>{" "}

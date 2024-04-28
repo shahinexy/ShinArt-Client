@@ -8,6 +8,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import ViewDetails from "../components/ViewDetails";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,12 @@ const router = createBrowserRouter([
             <MyItems></MyItems>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/viewDetails/:id",
+        element: <ViewDetails></ViewDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/art&craft/id/${params.id}`),
       },
       {
         path: "/login",
