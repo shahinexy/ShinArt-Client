@@ -6,7 +6,6 @@ const AllCards = ({ item }) => {
     item;
   return (
     <div>
-        <h1 className="text-7xl"> hoave to use table </h1>
       <div className="w-full h-full border border-secondary md:p-7 p-3 text-forth space-y-3 ">
         <img className="w-full h-56" src={photo} alt="" />
         <div className="flex flex-wrap gap-1 justify-between">
