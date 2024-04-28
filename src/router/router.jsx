@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ViewDetails from "../components/ViewDetails";
+import DataUpdate from "../pages/DataUpdate";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,15 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/art&craft/id/${params.id}`),
+      },
+      {
+        path: "/update/:id",
+        element: (
+          <PrivateRoute>
+            <DataUpdate></DataUpdate>
+          </PrivateRoute>
+        ),
+        loader: ({params}) => fetch(`http://localhost:5000/art&craft/id/${params.id}`)
       },
       {
         path: "/login",

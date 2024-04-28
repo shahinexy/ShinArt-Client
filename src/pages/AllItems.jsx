@@ -17,6 +17,7 @@ const AllItems = () => {
         </p>
       </div>
 
+      <div className="overflow-x-auto">
       <table className="table mb-12 table-zebra text-forth font-semibold">
         <thead>
           <tr className="text-lg text-forth uppercase">
@@ -48,6 +49,7 @@ const AllItems = () => {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 };

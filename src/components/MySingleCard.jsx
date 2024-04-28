@@ -1,5 +1,6 @@
 import { PropTypes } from "prop-types";
 import { FaRegEdit, FaRegStar, FaRegTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MySingleCard = ({ item, myItems, setMyItems }) => {
@@ -39,8 +40,8 @@ const MySingleCard = ({ item, myItems, setMyItems }) => {
                 text: "Your item has been deleted.",
                 icon: "success",
               });
-              const remainig = myItems.filter(item => item._id !== id);
-              setMyItems(remainig)
+              const remainig = myItems.filter((item) => item._id !== id);
+              setMyItems(remainig);
             }
           });
       }
@@ -71,15 +72,21 @@ const MySingleCard = ({ item, myItems, setMyItems }) => {
         </div>
 
         <div className="flex gap-3 justify-between pt-2">
-          <button className="btn flex-1 flex gap-1 text-base items-center border border-secondary rounded-none bg-secondary text-forth font-bold hover:bg-inherit hover:border-secondary">
-            Update <FaRegEdit></FaRegEdit>{" "}
-          </button>
+          <div className="flex-1">
+          <Link to={`/update/${_id}`}>
+            <button className="btn flex-1 w-full gap-1 text-base items-center border border-secondary rounded-none bg-secondary text-forth font-bold hover:bg-inherit hover:border-secondary">
+              Update <FaRegEdit></FaRegEdit>{" "}
+            </button>
+          </Link>
+          </div>
+          <div className="flex-1">
           <button
             onClick={() => handleDelete(_id)}
-            className="btn flex-1 flex gap-1 text-base items-center border border-secondary rounded-none bg-inherit text-forth font-bold hover:bg-secondary hover:border-secondary"
+            className="btn flex-1 w-full gap-1 text-base items-center border border-secondary rounded-none bg-inherit text-forth font-bold hover:bg-secondary hover:border-secondary"
           >
             Delete <FaRegTrashAlt></FaRegTrashAlt>{" "}
           </button>
+          </div>
         </div>
       </div>
     </div>
@@ -89,7 +96,7 @@ const MySingleCard = ({ item, myItems, setMyItems }) => {
 MySingleCard.propTypes = {
   item: PropTypes.object.isRequired,
   myItems: PropTypes.array.isRequired,
-  setMyItems: PropTypes.array.isRequired
+  setMyItems: PropTypes.array.isRequired,
 };
 
 export default MySingleCard;

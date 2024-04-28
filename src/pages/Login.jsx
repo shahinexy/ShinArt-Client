@@ -43,6 +43,7 @@ const Login = () => {
     .then(res =>{
       if(res){
         toast.success("Login Successfull")
+        navigate(location?.state ? location.state : "/")
       }
     })
     .catch(error =>{
@@ -56,6 +57,7 @@ const Login = () => {
     .then(res => {
       if(res){
         toast.success("Login Successfull")
+        navigate(location?.state ? location.state : "/")
       }
     })
     .catch(error =>{

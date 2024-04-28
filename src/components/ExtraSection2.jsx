@@ -3,7 +3,7 @@ import { FaLocationArrow } from "react-icons/fa";
 const ExtraSection2 = () => {
   return (
     <div>
-      <div className="flex text-forth md:my-32 my-8">
+      <div className="lg:flex text-forth md:my-32 my-8">
         <div className="flex-1 p-5 md:pl-20 flex  lg:justify-start justify-center items-center  bg-third lg:rounded-tr-full">
           <div className="md:w-3/4 space-y-5">
             <h1 className="md:text-4xl text-3xl font-bold">Contect with us</h1>
@@ -11,7 +11,7 @@ const ExtraSection2 = () => {
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil
               at, aperiam culpa corporis architecto ut?
             </p>
-            <div className="flex gap-5">
+            <div className="flex sm:flex-row  flex-col gap-5 ">
               <input
                 className="p-2 border-l-4 border-primary w-full"
                 type="text"
