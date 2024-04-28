@@ -18,7 +18,7 @@ const NavBar = () => {
               ? "pending"
               : isActive
               ? "border-b-2 border-secondary rounded-none text-third"
-              : "text-white"
+              : "text-forth"
           }
         >
           Home
@@ -32,7 +32,7 @@ const NavBar = () => {
               ? "pending"
               : isActive
               ? "border-b-2 border-secondary rounded-none text-third"
-              : "text-white"
+              : "text-forth"
           }
         >
           All Art & craft Items
@@ -46,7 +46,7 @@ const NavBar = () => {
               ? "pending"
               : isActive
               ? "border-b-2 border-secondary rounded-none text-third"
-              : "text-white"
+              : "text-forth"
           }
         >
           Add Craft Item
@@ -60,7 +60,7 @@ const NavBar = () => {
               ? "pending"
               : isActive
               ? "border-b-2 border-secondary rounded-none text-third"
-              : "text-white"
+              : "text-forth"
           }
         >
           My Art & Craft List
@@ -101,8 +101,8 @@ const NavBar = () => {
                 {navLink}
               </ul>
             </div>
-            <Link to={"/"} className="text-xl font-bold text-white">
-              Shin<span className="text-third">Art</span>
+            <Link to={"/"} className="text-xl font-bold text-third">
+              Shin<span className="text-forth">Art</span>
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
