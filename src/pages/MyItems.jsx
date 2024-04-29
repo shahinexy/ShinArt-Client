@@ -5,6 +5,8 @@ import MySingleCard from "../components/MySingleCard";
 const MyItems = () => {
   const { user } = useContext(authContext);
   const [myItems, setMyItems] = useState([]);
+  const [displyItem, setDisplayItem] = useState([]);
+
   // console.log(myItems);
   useEffect(() => {
     fetch(`http://localhost:5000/art&craft/uid/${user?.uid}`)
@@ -12,8 +14,21 @@ const MyItems = () => {
       .then((data) => {
         // console.log(data);
         setMyItems(data);
+        setDisplayItem(data);
       });
   }, [user]);
+
+  const handleFilter = (value) => {
+    if (value === "Yes") {
+      const result = myItems.filter((item) => item.customization == "Yes");
+      setDisplayItem(result);
+    } else if (value === "No") {
+      const result = myItems.filter((item) => item.customization == "No");
+      setDisplayItem(result);
+    } else {
+      setDisplayItem(myItems);
+    }
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-5">
@@ -29,13 +44,46 @@ const MyItems = () => {
         </p>
       </div>
 
+      {/* dropdwon filter  */}
+      <div className="flex justify-end">
+        <div className="dropdown">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn m-1 rounded-none bg-secondary text-forth font-semibold"
+          >
+            Customization
+          </div>
+          <ul
+            tabIndex={0}
+            className="dropdown-content z-[1] menu p-2 shadow  rounded-box w-full bg-secondary"
+          >
+            <li onClick={() => handleFilter("Yes")}>
+              <a>Yes</a>
+            </li>
+            <li onClick={() => handleFilter("No")}>
+              <a>No</a>
+            </li>
+            <li onClick={() => handleFilter("All")}>
+              <a>All</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-7 md:my-12 my-5">
-        {
-            myItems.map(item => <MySingleCard key={item._id} item={item} myItems={myItems} setMyItems={setMyItems}></MySingleCard>)
-        }
+        {displyItem.map((item) => (
+          <MySingleCard
+            key={item._id}
+            item={item}
+            myItems={myItems}
+            setMyItems={setMyItems}
+          ></MySingleCard>
+        ))}
       </div>
     </div>
   );
 };
+
 
 export default MyItems;

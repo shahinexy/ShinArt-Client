@@ -1,4 +1,5 @@
-import { FaFacebook, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaInstagram, FaPhone, FaTwitter } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -23,13 +24,11 @@ const Footer = () => {
           <div className="flex gap-5 justify-around">
             <div>
               <h2 className=" text-xl font-semibold border-b-2 border-secondary inline-block px-2  md:mb-7 mb-3">
-                SERVICE
+                CONTACT
               </h2>
-              <div className="flex font-semibold flex-col">
-                <a className="link link-hover">Branding</a>
-                <a className="link link-hover">Design</a>
-                <a className="link link-hover">Marketing</a>
-                <a className="link link-hover">Advertisement</a>
+              <div className="flex font-semibold flex-col gap-3">
+                <a className="link link-hover flex items-center gap-2"><FaPhone className="text-xl"></FaPhone> + 01609729900</a>
+                <a className="link link-hover flex items-center gap-2"><MdEmail className="text-2xl"></MdEmail> email@gmail.com</a>
               </div>
             </div>
             <div>
