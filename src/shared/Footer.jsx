@@ -21,7 +21,7 @@ const Footer = () => {
               sequi illo veniam fugit nulla nostrum.
             </p>
           </div>
-          <div className="flex gap-5 justify-around">
+          <div className="flex gap-5 md:justify-around flex-wrap">
             <div>
               <h2 className=" text-xl font-semibold border-b-2 border-secondary inline-block px-2  md:mb-7 mb-3">
                 CONTACT

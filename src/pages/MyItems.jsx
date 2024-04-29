@@ -50,13 +50,13 @@ const MyItems = () => {
           <div
             tabIndex={0}
             role="button"
-            className="btn m-1 rounded-none bg-secondary text-forth font-semibold"
+            className="btn m-1 rounded-none bg-secondary text-forth font-semibold text-base"
           >
             Customization
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content z-[1] menu p-2 shadow  rounded-box w-full bg-secondary"
+            className="dropdown-content z-[1] menu p-2 shadow  rounded-box w-full bg-third"
           >
             <li onClick={() => handleFilter("Yes")}>
               <a>Yes</a>

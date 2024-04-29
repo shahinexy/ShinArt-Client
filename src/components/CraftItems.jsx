@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const CraftItems = ({ allItems }) => {
   return (
     <div>
-      <div className="md:w-3/4 border-l-4 border-primary space-y-3 md:my-12 my-5 px-3 text-forth">
+      <div className="md:w-3/4 border-l-4 border-primary space-y-3 md:my-20 my-5 px-3 text-forth">
         <h1 className="md:text-4xl text-3xl font-semibold">
           Craft Items Section
         </h1>

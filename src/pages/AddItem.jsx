@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 
 const AddItem = () => {
   const {user} = useContext(authContext)
-  console.log(user.uid);
   const {
     register,
     handleSubmit,
