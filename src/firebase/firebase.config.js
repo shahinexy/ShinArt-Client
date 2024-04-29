@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBRAoL4YDrxH8cIrWvvznIFC50VYWSApQA",
-  authDomain: "sinerart-a-10.firebaseapp.com",
-  projectId: "sinerart-a-10",
-  storageBucket: "sinerart-a-10.appspot.com",
-  messagingSenderId: "618064688832",
-  appId: "1:618064688832:web:702cacaca67775db8fdf25"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase
