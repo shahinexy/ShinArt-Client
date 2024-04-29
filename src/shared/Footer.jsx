@@ -17,8 +17,7 @@ const Footer = () => {
               ABOUT
             </h2>
             <p className="font-semibold">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-              sequi illo veniam fugit nulla nostrum.
+            Welcome to ShinArt where we celebrate the artistry of handmade treasures.  Explore our curated collection.
             </p>
           </div>
           <div className="flex gap-5 md:justify-around flex-wrap">

@@ -10,10 +10,7 @@ const AllItems = () => {
           Our All Art and Craft Colltections
         </h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum
-          distinctio iusto neque dolorem molestiae quos ullam soluta velit
-          incidunt praesentium quo expedita impedit, veniam, reiciendis
-          cupiditate sequi id hic ipsa?
+        Discover a world of crafted wonders, where each piece reflects skillful artistry and imaginative design, ready to inspire and delight. From intricate sculptures to functional decor, find the perfect expression of creativity for your home.
         </p>
       </div>
 

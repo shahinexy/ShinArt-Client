@@ -3,7 +3,7 @@ import { FaRegEdit, FaRegStar, FaRegTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const MySingleCard = ({ item, myItems, setMyItems }) => {
+const MySingleCard = ({ item, displyItem, setDisplayItem }) => {
   const {
     _id,
     photo,
@@ -40,8 +40,8 @@ const MySingleCard = ({ item, myItems, setMyItems }) => {
                 text: "Your item has been deleted.",
                 icon: "success",
               });
-              const remainig = myItems.filter((item) => item._id !== id);
-              setMyItems(remainig);
+              const remainig = displyItem.filter((item) => item._id !== id);
+              setDisplayItem(remainig);
             }
           });
       }
@@ -95,8 +95,8 @@ const MySingleCard = ({ item, myItems, setMyItems }) => {
 
 MySingleCard.propTypes = {
   item: PropTypes.object.isRequired,
-  myItems: PropTypes.array.isRequired,
-  setMyItems: PropTypes.array.isRequired,
+  displyItem: PropTypes.array.isRequired,
+  setDisplayItem: PropTypes.array.isRequired,
 };
 
 export default MySingleCard;

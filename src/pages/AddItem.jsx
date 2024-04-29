@@ -38,10 +38,7 @@ const AddItem = () => {
           Add Your Carft And Art
         </h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque sed
-          libero quod nostrum nisi animi. Sit quo soluta esse reiciendis
-          mollitia velit tempora ullam delectus, quisquam quod sunt ipsam
-          tempore.
+        Explore your artistic haven where creativity knows no bounds. Add your own craft and art pieces to our curated collection, shaping a vibrant community of expression and inspiration.
         </p>
       </div>
 

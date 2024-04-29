@@ -2,7 +2,6 @@ import { useLoaderData } from "react-router-dom";
 import { FaAngleRight, FaStar } from "react-icons/fa";
 const ViewDetails = () => {
   const data = useLoaderData();
-  console.log(data);
   const {
     photo,
     item_name,

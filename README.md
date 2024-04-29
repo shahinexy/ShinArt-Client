@@ -1,8 +1,21 @@
-# React + Vite
+# ShinArt
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live URL:
 
-Currently, two official plugins are available:
+## Feature of this website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Allow users to create profiles where they can showcase their art and craft creations.
+- Create a marketplace where artisans can sell their handmade products directly to customers, fostering a supportive environment for small businesses.
+- Ensure the website is fully responsive and optimized for mobile devices, allowing users to access and interact with the platform anytime, anywhere.
+- Provide tools and resources for users to customize their profiles, galleries, and marketplace listings, allowing them to showcase their unique style and personality.
+- Implement a sophisticated filter system that allows users to search for art and craft items based on customization options
+- Offer a seamless purchasing experience with secure payment options and easy checkout processes.
+
+## Jute & wooden Crafts
+
+a. Wooden Furniture & Sculptures
+b. Wooden Home Decor
+c. Wooden Utensils and Kitchenware
+d. Jute Home Decor
+e. Jute Kitchenware & utensils
+f. Jute and wooden jewellery

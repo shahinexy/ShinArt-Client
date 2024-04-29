@@ -10,6 +10,7 @@ import Register from "../pages/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ViewDetails from "../components/ViewDetails";
 import DataUpdate from "../pages/DataUpdate";
+import CategoryPage from "../pages/CategoryPage";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/art&craft/id/${params.id}`),
+      },
+      {
+        path: '/category/:subcategory_Name',
+        element: <CategoryPage></CategoryPage>,
+        loader: ({params}) => fetch(`http://localhost:5000/category/${params.subcategory_Name}`)
       },
       {
         path: "/update/:id",

@@ -6,10 +6,9 @@ const ExtraSection2 = () => {
       <div className="lg:flex text-forth md:my-32 my-8">
         <div className="flex-1 p-5 md:pl-20 flex  lg:justify-start justify-center items-center  bg-third lg:rounded-tr-full">
           <div className="md:w-3/4 space-y-5">
-            <h1 className="md:text-4xl text-3xl font-bold">Contect with us</h1>
+            <h1 className="md:text-4xl text-3xl font-bold">Join Our Community</h1>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil
-              at, aperiam culpa corporis architecto ut?
+            Reach out and connect with us to share your thoughts, questions, and feedback. We're here to listen and engage with our vibrant community of art and craft enthusiasts.
             </p>
             <div className="flex sm:flex-row  flex-col gap-5 ">
               <input

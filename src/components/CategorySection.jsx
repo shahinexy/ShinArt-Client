@@ -14,13 +14,10 @@ const CategorySection = () => {
     <div>
       <div className="md:w-3/4 border-l-4 border-primary space-y-3 md:my-20 my-5 px-3 text-forth">
         <h1 className="md:text-4xl text-3xl font-semibold">
-          Categories Section
+        Natural Elements
         </h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum
-          distinctio iusto neque dolorem molestiae quos ullam soluta velit
-          incidunt praesentium quo expedita impedit, veniam, reiciendis
-          cupiditate sequi id hic ipsa?
+        Explore our Natural Elements collection, featuring eco-friendly treasures crafted from jute and wood, perfect for adding rustic charm and sustainable style to your home and wardrobe.
         </p>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
