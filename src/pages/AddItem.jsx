@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { authContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const AddItem = () => {
   const {user} = useContext(authContext)
@@ -33,6 +34,9 @@ const AddItem = () => {
 
   return (
     <div className="max-w-5xl mx-auto text-forth">
+      <Helmet>
+        <title>Add Craft Item</title>
+      </Helmet>
       <div className="md:w-3/4 border-l-4 border-primary space-y-3 md:my-12 my-5 px-3">
         <h1 className="md:text-4xl text-3xl font-semibold">
           Add Your Carft And Art

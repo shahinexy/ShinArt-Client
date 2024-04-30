@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { authContext } from "../AuthProvider/AuthProvider";
 import MySingleCard from "../components/MySingleCard";
+import { Helmet } from "react-helmet";
 
 const MyItems = () => {
   const { user } = useContext(authContext);
@@ -9,7 +10,9 @@ const MyItems = () => {
 
   // console.log(myItems);
   useEffect(() => {
-    fetch(`https://ph-assignment-10-server-backend.vercel.app/art&craft/uid/${user?.uid}`)
+    fetch(
+      `https://ph-assignment-10-server-backend.vercel.app/art&craft/uid/${user?.uid}`
+    )
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -32,12 +35,17 @@ const MyItems = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-5">
+      <Helmet>
+        <title>My Art & Craft List</title>
+      </Helmet>
       <div className="md:w-3/4 border-l-4 border-primary space-y-3 md:my-12 my-5 px-3 text-forth">
         <h1 className="md:text-4xl text-3xl font-semibold">
-        Your Personal Gallery
+          Your Personal Gallery
         </h1>
         <p>
-        Welcome to your personal gallery to display and share your unique art and craft creations with the world. Join our community of makers and enthusiasts, celebrating creativity in all its forms.
+          Welcome to your personal gallery to display and share your unique art
+          and craft creations with the world. Join our community of makers and
+          enthusiasts, celebrating creativity in all its forms.
         </p>
       </div>
 
@@ -81,6 +89,5 @@ const MyItems = () => {
     </div>
   );
 };
-
 
 export default MyItems;

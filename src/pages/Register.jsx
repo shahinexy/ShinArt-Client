@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../AuthProvider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const { createUser, updateUser } = useContext(authContext);
@@ -15,8 +16,6 @@ const Register = () => {
   const {
     register,
     handleSubmit,
-    // watch,
-    // formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
@@ -31,8 +30,8 @@ const Register = () => {
     createUser(data.email, data.pass)
       .then((res) => {
         toast.success("Register Successfull");
+        navegate("/");
         if (res) {
-          navegate("/");
           updateUser(data.name, data.photo)
             .then(
               setTimeout(() => {
@@ -44,6 +43,7 @@ const Register = () => {
       })
       .catch((error) => {
         console.log(error);
+        toast.error(error.message.split("/")[1].replaceAll(")", ""));
       });
   };
 
@@ -55,6 +55,9 @@ const Register = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Legister</title>
+      </Helmet>
       <div className="xl:w-1/3 md:w-2/3 text-forth p-8 bg-secondary mx-auto md:my-20 my-6">
         <h1 className="text-3xl font-bold text-center mb-8">Register Now</h1>
 

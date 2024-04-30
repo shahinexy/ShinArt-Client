@@ -6,10 +6,10 @@ import { IoColorPaletteOutline } from 'react-icons/io5';
 const ExtraRoute1 = () => {
     return (
         <div className="lg:flex text-forth md:my-32 my-8">
-            <div className="flex-1">
+            <div data-aos="zoom-out-left" className="flex-1">
                 <img className='w-full h-full' src={img1} alt="" />
             </div>
-            <div className='flex-1 bg-third md:px-32 px-5 py-8'>
+            <div data-aos="zoom-out-right" data-aos-delay="200" className='flex-1 bg-third md:px-32 px-5 py-8'>
                 <div className='grid md:grid-cols-2 grid-cols-1 gap-12'>
                     <div className='space-y-4'>
                         <p className='text-5xl'><HiOutlineLightBulb></HiOutlineLightBulb></p>

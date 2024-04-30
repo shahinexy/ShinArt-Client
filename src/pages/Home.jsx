@@ -4,12 +4,16 @@ import Slider from "../components/Slider";
 import ExtraRoute1 from "../components/ExtraRoute1";
 import ExtraSection2 from "../components/ExtraSection2";
 import CategorySection from "../components/CategorySection";
+import { Helmet } from "react-helmet";
 // import Testing from "../components/Testing";
 
 const Home = () => {
   const allItems = useLoaderData();
   return (
     <div>
+      <Helmet>
+        <title>ShinArt | Home</title>
+      </Helmet>
       <Slider></Slider>
 
       <div className="max-w-7xl mx-auto px-5">

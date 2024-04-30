@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import errorimg from "../assets/images/2376754.png";
+import { Helmet } from "react-helmet";
 const ErrorPage = () => {
   return (
     <div>
+      <Helmet>
+        <title>404 Error</title>
+      </Helmet>
       <div className="flex justify-center items-center flex-col h-screen">
         <img className="md:w-2/6 w-4/6" src={errorimg} alt="" />
         <h2 className="md:text-4xl text-3xl font-bold text-forth">

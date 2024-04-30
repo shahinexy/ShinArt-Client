@@ -17,7 +17,7 @@ const NavBar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "border-b-2 border-secondary rounded-none text-third"
+              ? "border-b-2 border-third rounded-none text-forth"
               : "text-forth"
           }
         >
@@ -31,7 +31,7 @@ const NavBar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "border-b-2 border-secondary rounded-none text-third"
+              ? "border-b-2 border-third rounded-none text-forth"
               : "text-forth"
           }
         >
@@ -45,7 +45,7 @@ const NavBar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "border-b-2 border-secondary rounded-none text-third"
+              ? "border-b-2 border-third rounded-none text-forth"
               : "text-forth"
           }
         >
@@ -59,7 +59,7 @@ const NavBar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "border-b-2 border-secondary rounded-none text-third"
+              ? "border-b-2 border-third rounded-none text-forth"
               : "text-forth"
           }
         >
@@ -71,7 +71,7 @@ const NavBar = () => {
   return (
     <div>
       <nav>
-        <div className="navbar bg-primary md:px-20">
+        <div className="navbar bg-secondary md:px-20">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -173,13 +173,13 @@ const NavBar = () => {
               <>
                 <Link
                   to={"/login"}
-                  className="btn md:px-5 px-2 text-lg font-semibold text-forth bg-secondary border-secondary hover:bg-third rounded-none"
+                  className="btn md:px-5 px-2 text-lg font-semibold text-forth bg-secondary border-primary hover:bg-third rounded-none"
                 >
                   Login
                 </Link>
                 <Link
                   to={"/register"}
-                  className="btn md:px-5 px-2 text-lg font-semibold text-forth bg-secondary border-secondary hover:bg-third rounded-none"
+                  className="btn md:px-5 px-2 text-lg font-semibold text-forth bg-secondary border-primary hover:bg-third rounded-none"
                 >
                   Register
                 </Link>

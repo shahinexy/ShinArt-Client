@@ -12,6 +12,11 @@ import ViewDetails from "../components/ViewDetails";
 import DataUpdate from "../pages/DataUpdate";
 import CategoryPage from "../pages/CategoryPage";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
+
 const router = createBrowserRouter([
   {
     path: "/",

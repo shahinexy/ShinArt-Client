@@ -4,68 +4,67 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const [showHide, setShowHide] = useState(true);
   const [passType, setPassType] = useState(true);
   const { loginUser, googleLogin, githubLogin } = useContext(authContext);
 
-  const location = useLocation()
-  const navigate = useNavigate()
+  const location = useLocation();
+  const navigate = useNavigate();
   console.log(location);
 
   const {
     register,
     handleSubmit,
-    // watch,
-    // formState: { errors },
   } = useForm();
 
-  const onSubmit = data =>{
+  const onSubmit = (data) => {
     console.log(data);
 
     loginUser(data.email, data.pass)
-    .then(res => {
-      if(res){
-        toast.success("Login Successfull")
-        navigate(location?.state ? location.state : "/")
-      }
-    })
-    .catch(error =>{
-      console.log(error);
-      toast.error(error.message.split("/")[1].replaceAll(")", ""))
-    })
-  }
+      .then((res) => {
+        if (res) {
+          toast.success("Login Successfull");
+          navigate(location?.state ? location.state : "/");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error(error.message.split("/")[1].replaceAll(")", ""));
+      });
+  };
 
   // handle google login
-  const handleGoogleLogin = () =>{
+  const handleGoogleLogin = () => {
     googleLogin()
-    .then(res =>{
-      if(res){
-        toast.success("Login Successfull")
-        navigate(location?.state ? location.state : "/")
-      }
-    })
-    .catch(error =>{
-      console.log(error);
-    })
-  }
+      .then((res) => {
+        if (res) {
+          toast.success("Login Successfull");
+          navigate(location?.state ? location.state : "/");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-  // handle github login 
-  const handleGithubLogin = () =>{
+  // handle github login
+  const handleGithubLogin = () => {
     githubLogin()
-    .then(res => {
-      if(res){
-        toast.success("Login Successfull")
-        navigate(location?.state ? location.state : "/")
-      }
-    })
-    .catch(error =>{
-      console.log(error);
-    })
-  }
+      .then((res) => {
+        if (res) {
+          toast.success("Login Successfull");
+          navigate(location?.state ? location.state : "/");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-//handle show hide icon
+  //handle show hide icon
   const handleShowHide = () => {
     setShowHide(!showHide);
     setPassType(!passType);
@@ -73,6 +72,9 @@ const Login = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
       <div className="xl:w-1/3 md:w-2/3 text-forth p-8 bg-secondary mx-auto md:my-20 my-6">
         <h1 className="text-3xl font-bold text-center mb-8">Login Now</h1>
 
@@ -80,7 +82,7 @@ const Login = () => {
           <div>
             <p className="font-semibold mb-1">Email</p>
             <input
-            {...register('email')}
+              {...register("email")}
               className="w-full bg-third p-2 border-l-4 border-forth"
               type="email"
               placeholder="email"
@@ -89,7 +91,7 @@ const Login = () => {
           <div className="relative">
             <p className="font-semibold mb-1">Password</p>
             <input
-            {...register('pass')}
+              {...register("pass")}
               className="w-full bg-third p-2 border-l-4 border-forth"
               type={passType ? "password" : "text"}
               placeholder="password"
@@ -115,10 +117,16 @@ const Login = () => {
           </p>
         </form>
         <div className="flex gap-3">
-          <button onClick={handleGoogleLogin} className="btn flex-1 text-xl text-forth font-semibold hover:bg-primary rounded-none border-2 border-primary hover:border-forth bg-inherit mt-6">
+          <button
+            onClick={handleGoogleLogin}
+            className="btn flex-1 text-xl text-forth font-semibold hover:bg-primary rounded-none border-2 border-primary hover:border-forth bg-inherit mt-6"
+          >
             <FaGoogle></FaGoogle> Login
           </button>
-          <button onClick={handleGithubLogin} className="btn flex-1 text-xl text-forth font-semibold hover:bg-primary rounded-none border-2 border-primary hover:border-forth bg-inherit mt-6">
+          <button
+            onClick={handleGithubLogin}
+            className="btn flex-1 text-xl text-forth font-semibold hover:bg-primary rounded-none border-2 border-primary hover:border-forth bg-inherit mt-6"
+          >
             <FaGithub></FaGithub> Login
           </button>
         </div>

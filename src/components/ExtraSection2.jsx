@@ -4,7 +4,7 @@ const ExtraSection2 = () => {
   return (
     <div>
       <div className="flex lg:flex-row flex-col-reverse text-forth bg-secondary md:my-32 my-8">
-        <div className="flex-1 p-5 md:pl-20 flex  lg:justify-start justify-center items-center  bg-third lg:rounded-tr-full">
+        <div data-aos="zoom-out-left" className="flex-1 p-5 md:pl-20 flex  lg:justify-start justify-center items-center  bg-third lg:rounded-tr-full">
           <div className="md:w-3/4 space-y-5">
             <h1 className="md:text-4xl text-3xl font-bold">Join Our Community</h1>
             <p>
@@ -32,7 +32,7 @@ const ExtraSection2 = () => {
             </button>
           </div>
         </div>
-        <div className="flex-1 flex justify-center items-center">
+        <div data-aos="zoom-out-right" className="flex-1 flex justify-center items-center">
           <img className="w-3/4" src={img1} alt="" />
         </div>
       </div>

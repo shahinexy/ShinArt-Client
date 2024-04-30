@@ -3,7 +3,7 @@ import { FaAngleRight, FaRegStar } from "react-icons/fa";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const SingleCard = ({ item }) => {
+const SingleCard = ({ item, idx }) => {
   const {
     _id,
     photo,
@@ -15,7 +15,11 @@ const SingleCard = ({ item }) => {
   } = item;
   return (
     <div>
-      <div className="w-full h-full border border-secondary p-3 text-forth space-y-3 shadow-lg shadow-secondary">
+      <div
+        data-aos={idx % 2 === 0 ? "fade-down-right" : "fade-down-left"}
+        data-aos-duration="1000"
+        className="w-full h-full border border-secondary p-3 text-forth space-y-3 shadow-lg shadow-secondary"
+      >
         <img className="w-full h-56" src={photo} alt="" />
         <h1 className="text-2xl font-semibold">{item_name}</h1>
         <div className="flex flex-wrap gap-1 justify-between">
@@ -40,6 +44,7 @@ const SingleCard = ({ item }) => {
 
 SingleCard.propTypes = {
   item: PropTypes.object.isRequired,
+  idx: PropTypes.number.isRequired
 };
 
 export default SingleCard;

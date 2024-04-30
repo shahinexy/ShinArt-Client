@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
@@ -28,24 +29,30 @@ const DataUpdate = () => {
   const onSubmit = (data) => {
     console.log(data);
 
-    fetch(`https://ph-assignment-10-server-backend.vercel.app/art&craft/id/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-    .then(res => res.json())
-    .then(data =>{
+    fetch(
+      `https://ph-assignment-10-server-backend.vercel.app/art&craft/id/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
-        if(data.modifiedCount > 0){
-            toast.success("Update Successfull")
+        if (data.modifiedCount > 0) {
+          toast.success("Update Successfull");
         }
-    })
+      });
   };
 
   return (
     <div className="max-w-5xl mx-auto text-forth">
+      <Helmet>
+        <title>Update Data</title>
+      </Helmet>
       <div className="bg-secondary p-8  md:my-32 my-10 ">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           <div className="flex justify-center mb-10">
