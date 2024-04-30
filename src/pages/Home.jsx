@@ -10,7 +10,7 @@ import { Helmet } from "react-helmet";
 const Home = () => {
   const allItems = useLoaderData();
   return (
-    <div>
+    <div className="overflow-hidden">
       <Helmet>
         <title>ShinArt | Home</title>
       </Helmet>
