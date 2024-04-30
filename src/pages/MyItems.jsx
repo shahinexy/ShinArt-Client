@@ -9,7 +9,7 @@ const MyItems = () => {
 
   // console.log(myItems);
   useEffect(() => {
-    fetch(`http://localhost:5000/art&craft/uid/${user?.uid}`)
+    fetch(`https://ph-assignment-10-server-backend.vercel.app/art&craft/uid/${user?.uid}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);

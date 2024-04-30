@@ -6,11 +6,8 @@ const CategoryPage = () => {
     const loadedData = useLoaderData()
     const [categorys, setCategorys] = useState([])
 
-    console.log(loadedData.subcategory_Name);
-    console.log(categorys);
-
     useEffect(()=>{
-        fetch('http://localhost:5000/art&craft')
+        fetch('https://ph-assignment-10-server-backend.vercel.app/art&craft')
         .then(res => res.json())
         .then(data => {
             const remaining = data.filter(data => data.subcategory_Name == loadedData.subcategory_Name)

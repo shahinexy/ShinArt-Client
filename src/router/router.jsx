@@ -21,12 +21,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/art&craft"),
+        loader: () => fetch("https://ph-assignment-10-server-backend.vercel.app/art&craft"),
       },
       {
         path: "/allitems",
         element: <AllItems></AllItems>,
-        loader: () => fetch("http://localhost:5000/art&craft"),
+        loader: () => fetch("https://ph-assignment-10-server-backend.vercel.app/art&craft"),
       },
       {
         path: "/addItme",
@@ -52,12 +52,12 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/art&craft/id/${params.id}`),
+          fetch(`https://ph-assignment-10-server-backend.vercel.app/art&craft/id/${params.id}`),
       },
       {
         path: '/category/:subcategory_Name',
         element: <CategoryPage></CategoryPage>,
-        loader: ({params}) => fetch(`http://localhost:5000/category/${params.subcategory_Name}`)
+        loader: ({params}) => fetch(`https://ph-assignment-10-server-backend.vercel.app/category/${params.subcategory_Name}`)
       },
       {
         path: "/update/:id",
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
             <DataUpdate></DataUpdate>
           </PrivateRoute>
         ),
-        loader: ({params}) => fetch(`http://localhost:5000/art&craft/id/${params.id}`)
+        loader: ({params}) => fetch(`https://ph-assignment-10-server-backend.vercel.app/art&craft/id/${params.id}`)
       },
       {
         path: "/login",

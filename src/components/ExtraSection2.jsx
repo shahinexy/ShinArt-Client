@@ -1,9 +1,9 @@
-import img1 from "../assets/images/13248411_5147268.jpg";
+import img1 from "../assets/images/Tech Life - Communication.png";
 import { FaLocationArrow } from "react-icons/fa";
 const ExtraSection2 = () => {
   return (
     <div>
-      <div className="lg:flex text-forth md:my-32 my-8">
+      <div className="flex lg:flex-row flex-col-reverse text-forth bg-secondary md:my-32 my-8">
         <div className="flex-1 p-5 md:pl-20 flex  lg:justify-start justify-center items-center  bg-third lg:rounded-tr-full">
           <div className="md:w-3/4 space-y-5">
             <h1 className="md:text-4xl text-3xl font-bold">Join Our Community</h1>

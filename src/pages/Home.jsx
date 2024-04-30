@@ -7,12 +7,10 @@ import CategorySection from "../components/CategorySection";
 // import Testing from "../components/Testing";
 
 const Home = () => {
-  const allItems = useLoaderData()
+  const allItems = useLoaderData();
   return (
     <div>
       <Slider></Slider>
-
-      {/* <Testing></Testing> */}
 
       <div className="max-w-7xl mx-auto px-5">
         <CraftItems allItems={allItems}></CraftItems>
@@ -21,7 +19,7 @@ const Home = () => {
       <ExtraRoute1></ExtraRoute1>
 
       <div className="max-w-7xl mx-auto px-5">
-      <CategorySection></CategorySection>
+        <CategorySection></CategorySection>
       </div>
 
       <ExtraSection2></ExtraSection2>

@@ -28,7 +28,7 @@ const MySingleCard = ({ item, displyItem, setDisplayItem }) => {
       confirmButtonText: "Delete",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/art&craft/id/${id}`, {
+        fetch(`https://ph-assignment-10-server-backend.vercel.app/art&craft/id/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

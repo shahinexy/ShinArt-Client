@@ -96,9 +96,28 @@ const NavBar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm  dropdown-content mt-3 z-20 p-2 shadow rounded-box w-52 bg-primary text-base font-semibold"
+                className="menu menu-sm  dropdown-content mt-3 z-20 p-3 shadow rounded-none w-60 bg-primary text-lg font-semibold border-2 border-secondary space-y-2"
               >
                 {navLink}
+                {user ? (
+                  <>
+                    <button
+                      onClick={logoutUser}
+                      className="btn md:px-5 px-2 text-lg font-semibold text-forth bg-secondary border-secondary hover:bg-third rounded-none"
+                    >
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      to={"/login"}
+                      className="btn md:px-5 px-2 text-lg font-semibold text-forth bg-secondary border-secondary hover:bg-third rounded-none"
+                    >
+                      Login
+                    </Link>
+                  </>
+                )}
               </ul>
             </div>
             <Link to={"/"} className="text-xl font-bold text-third">
@@ -113,12 +132,16 @@ const NavBar = () => {
           <div className="navbar-end sm:space-x-3 space-x-2">
             {user ? (
               <>
-              {/* ==== tool tip ======== */}
+                {/* ==== tool tip ======== */}
                 <div className="w-10 h-10">
                   <a id="clickable">
                     {user?.photoURL ? (
                       <>
-                        <img className="rounded-full w-10 h-10" src={user.photoURL} alt="" />
+                        <img
+                          className="rounded-full w-10 h-10"
+                          src={user.photoURL}
+                          alt=""
+                        />
                       </>
                     ) : (
                       <TbUserCircle className="text-4xl text-forth"></TbUserCircle>
@@ -131,7 +154,9 @@ const NavBar = () => {
                     className="z-20"
                   >
                     <div className="bg-secondary/100 md:p-3">
-                      <p className="font-bold text-lg">User: {user?.displayName || 'unknown'}</p>
+                      <p className="font-bold text-lg">
+                        User: {user?.displayName || "unknown"}
+                      </p>
                       <div className="flex justify-center">
                         <button
                           onClick={logoutUser}

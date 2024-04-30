@@ -14,7 +14,7 @@ const AddItem = () => {
   const onSubmit = (data) =>{
     const datas = {...data, loginUid: user.uid}
     console.log(datas)
-     fetch('http://localhost:5000/art&craft', {
+     fetch('https://ph-assignment-10-server-backend.vercel.app/art&craft', {
       method: "POST",
       headers:{
         "content-type" : "application/json"

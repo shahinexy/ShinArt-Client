@@ -6,7 +6,7 @@ const CategorySection = () => {
     const [items, setItems] = useState([])
 
     useEffect(() =>{
-        fetch('http://localhost:5000/category')
+        fetch('https://ph-assignment-10-server-backend.vercel.app/category')
         .then(res => res.json())
         .then(data => setItems(data))
     },[])

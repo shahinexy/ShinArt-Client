@@ -28,7 +28,7 @@ const DataUpdate = () => {
   const onSubmit = (data) => {
     console.log(data);
 
-    fetch(`http://localhost:5000/art&craft/id/${_id}`, {
+    fetch(`https://ph-assignment-10-server-backend.vercel.app/art&craft/id/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

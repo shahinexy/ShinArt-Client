@@ -17,7 +17,7 @@ const ViewDetails = () => {
   } = data;
   return (
     <div className="max-w-6xl mx-auto px-5 text-forth">
-      <div className="grid md:grid-cols-2 grid-cols-1 gap-10 md:my-12 my-5">
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 md:my-12 my-5">
         <div className="border-2 border-secondary flex justify-center items-center md:py-16 py-10">
           <img className="w-3/4" src={photo} alt="" />
         </div>
@@ -37,20 +37,27 @@ const ViewDetails = () => {
             <p className="bg-secondary px-2">{subcategory_Name}</p>
           </div>
 
-          <div className="flex justify-between border-y border-secondary py-3">
+          <div className="flex justify-between flex-wrap border-y border-secondary py-3">
             <p className="text-lg font-bold">Customization: {customization}</p>
             <p className="text-lg font-bold">Stock Status: {stockStatus}</p>
           </div>
-          <div className="flex justify-between ">
-            <p><span className="font-bold">User:</span> {name}</p>
-            <p><span className="font-bold">Email:</span> {email}</p>
+          <div className="flex justify-between flex-wrap gap-1">
+            <p>
+              <span className="font-bold">User:</span> {name}
+            </p>
+            <p>
+              <span className="font-bold">Email:</span> {email}
+            </p>
           </div>
-            <p><span className="font-bold">Processing Time:</span> {processing_time}</p>
-            <div className="pt-5">
+          <p>
+            <span className="font-bold">Processing Time:</span>{" "}
+            {processing_time}
+          </p>
+          <div className="pt-5">
             <button className="btn px-10 flex gap-1 text-base items-center border border-secondary rounded-none bg-secondary text-forth font-bold hover:bg-inherit hover:border-secondary uppercase">
               Add to Cart <FaAngleRight></FaAngleRight>{" "}
             </button>
-            </div>
+          </div>
         </div>
       </div>
     </div>

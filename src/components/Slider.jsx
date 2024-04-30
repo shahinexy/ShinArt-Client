@@ -46,7 +46,7 @@ const Slider = () => {
             <img className="w-full md:h-[91vh] h-[35vh]" src={slid1} />
           </SwiperSlide>
         </Swiper>
-        <div className="absolute w-full bottom-0 z-10 flex justify-center flex-col items-center bg-forth/50 md:py-5 py-1 text-white">
+        <div className="absolute w-full bottom-0 z-10 flex justify-center flex-col items-center bg-forth/50 md:py-5 py-2 text-white">
           <h2 className="md:text-3xl text-2xl text-center uppercase">
             <Typewriter
               cursor
