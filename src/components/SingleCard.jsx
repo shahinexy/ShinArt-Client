@@ -26,7 +26,7 @@ const SingleCard = ({ item, idx }) => {
           <p className="font-bold">Price: {price}$</p>
           <p className="bg-third px-2">{subcategory_Name}</p>
         </div>
-        <p>{description}</p>
+        <p>{description.slice(0, 160)}...</p>
         <div className="flex justify-between">
           <Link to={`/viewDetails/${_id}`}>
             <button className="btn flex gap-1 text-base items-center border border-secondary rounded-none hover:bg-secondary text-forth font-bold bg-inherit hover:border-secondary">

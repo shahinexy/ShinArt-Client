@@ -59,7 +59,7 @@ const MySingleCard = ({ item, displyItem, setDisplayItem }) => {
             {rating} <FaRegStar></FaRegStar>
           </p>
         </div>
-        <p className="pb-2">{description}</p>
+        <p className="pb-2">{description.slice(0, 160)}...</p>
 
         <div className="border-y-2 border-secondary py-3 flex flex-wrap gap-1 justify-between">
           <p className="bg-third px-2 border border-secondary font-semibold">

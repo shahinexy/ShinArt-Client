@@ -22,7 +22,7 @@ const SelectedCategoryCard = ({ item }) => {
           <p className="font-bold">Price: {price}$</p>
           <p className="bg-secondary px-2">{subcategory_Name}</p>
         </div>
-        <p>{description}</p>
+        <p>{description.slice(0, 160)}...</p>
         <div className="flex justify-between gap-1 flex-wrap border-y border-secondary py-3">
           <p>Processing Time: {processing_time}</p>
           <p className="flex gap-2 items-center">
